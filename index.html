@@ -19,19 +19,61 @@
 		/>
 
 		<title>Frontend Mentor | Tip calculator app</title>
-
-	
-		
 	</head>
 	<body>
-		Bill Select Tip % 5% 10% 15% 25% 50% Custom Number of People Tip Amount /
-		person Total / person Reset
+		<header class="header">
+			<img src="./images/logo.svg" alt="logo" />
+		</header>
+		<main class="container">
+			<div class="left">
+				<div class="bill">
+					<label>Bill</label>
+					<img class="dollar" src="./images/icon-dollar.svg" alt="dollar" />
+					<input type="text" placeholder="0" dir="rtl" />
+				</div>
+				<div class="tip-percentage-container">
+					<label>Select Tip %</label>
+					<div class="grid-container">
+						<button class="btn green">5%</button>
+						<button class="btn green">10%</button>
+						<button class="btn green">15%</button>
+						<button class="btn green">25%</button>
+						<button class="btn green">50%</button>
+						<input class="custom" type="text" placeholder="Custom" dir="rtl" />
+					</div>
+				</div>
+				<div class="people-container">
+					<label>Number of People</label>
+					<img class="person" src="./images/icon-person.svg" alt="person" />
+					<input type="text" id="people" placeholder="0" dir="rtl" />
+				</div>
+			</div>
+			<div class="right">
+				<div class="tip-summary-container">
+					<div class="row">
+						<div class="row-container">
+							<span class="amount">Tip Amount</span
+							><span class="amount-person">/ person</span>
+						</div>
+						<div class="cost">$0.00</div>
+					</div>
+					<div class="row">
+						<div class="row-container">
+							<span class="amount">Total</span
+							><span class="amount-person">/ person</span>
+						</div>
+						<div class="cost">$0.00</div>
+					</div>
+					<button class="reset">Reset</button>
+				</div>
+			</div>
+		</main>
 
 		<div class="attribution">
 			Challenge by
 			<a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
 				>Frontend Mentor</a
-			>. Coded by <a href="#">Your Name Here</a>.
+			>. Coded by <a href="#">Andrew Simons</a>.
 		</div>
 	</body>
 </html>

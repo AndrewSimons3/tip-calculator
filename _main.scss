@@ -1,3 +1,158 @@
+@import './variables';
+
+.header {
+	width: 100%;
+	background-color: $light-grayish-cyan;
+	display: flex;
+	justify-content: center;
+	padding: 3rem;
+}
+
+.container {
+	height: 100%;
+	border-radius: 12px 12px 0 0;
+	padding: 3rem;
+
+	label {
+		display: block;
+		font-size: 1.6rem;
+		color: $dark-grayish-cyan;
+		margin-bottom: 0.5rem;
+	}
+
+	input {
+		border: none;
+		border-radius: 0.8rem;
+		background-color: $very-light-grayish-cyan;
+		width: 100%;
+		padding: 1.25rem 2rem;
+		font-size: 24px;
+	}
+
+	input::placeholder {
+		color: $very-dark-cyan;
+		font-weight: 700;
+		font-size: 24px;
+		text-align: right;
+	}
+
+	input:focus {
+		
+		outline: 3px solid $strong-cyan;
+	}
+
+	.bill {
+		position: relative;
+		margin-bottom: 3rem;
+
+		.dollar {
+			position: absolute;
+			bottom: 19px;
+			left: 19px;
+		}
+	}
+
+	.tip-percentage-container {
+		margin-bottom: 3rem;
+		label {
+			margin-bottom: 1rem;
+		}
+		.grid-container {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			grid-template-rows: repeat(3, 1fr);
+			gap: 2rem;
+
+			.btn {
+				padding: 1rem 0;
+				font-size: 24px;
+				border-radius: 0.8rem;
+				border: none;
+				cursor: pointer;
+			}
+
+			.btn:hover {
+				background-color: $strong-cyan;
+				color: $very-dark-cyan;
+				transition: all 0.3s ease;
+			}
+
+			.green {
+				background-color: $very-dark-cyan;
+				color: $very-light-grayish-cyan;
+			}
+
+			.custom::placeholder {
+				color:$grayish-cyan !important;
+        font-weight: 300;
+        letter-spacing: 1.5px;
+			}
+		}
+	}
+
+	.people-container {
+		position: relative;
+		margin-bottom: 3rem;
+
+		.person {
+			position: absolute;
+			bottom: 19px;
+			left: 19px;
+		}
+	}
+
+	.tip-summary-container {
+		width: 100%;
+		background-color: $very-dark-cyan;
+		padding: 2rem;
+		border-radius: 1rem;
+		display: flex;
+		flex-direction: column;
+		gap: 3rem 0;
+
+		.row {
+			display: flex;
+			justify-content: space-between;
+
+			.row-container {
+				display: flex;
+				flex-direction: column;
+
+				.amount {
+					font-size: 18px;
+					color: $very-light-grayish-cyan;
+				}
+
+				.amount-person {
+					font-size: 14px;
+					color: $grayish-cyan;
+				}
+			}
+
+			.cost {
+				font-size: 24px;
+				color: $strong-cyan;
+			}
+		}
+
+		.reset {
+			width: 100%;
+			border: none;
+			border-radius: 6px;
+			padding: 1.5rem;
+			font-size: 18px;
+			font-weight: 700;
+			text-transform: uppercase;
+			background-color: $strong-cyan;
+			color: $very-dark-cyan;
+		}
+
+		.reset:hover {
+			background-color: hsl(172, 73%, 76%);
+		}
+	}
+}
+
 .attribution {
 	font-size: 11px;
 	text-align: center;

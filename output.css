@@ -1,3 +1,134 @@
+.header {
+  width: 100%;
+  background-color: hsl(185deg, 41%, 84%);
+  display: flex;
+  justify-content: center;
+  padding: 3rem;
+}
+
+.container {
+  height: 100%;
+  border-radius: 12px 12px 0 0;
+  padding: 3rem;
+}
+.container label {
+  display: block;
+  font-size: 1.6rem;
+  color: hsl(186deg, 14%, 43%);
+  margin-bottom: 0.5rem;
+}
+.container input {
+  border: none;
+  border-radius: 0.8rem;
+  background-color: hsl(189deg, 41%, 97%);
+  width: 100%;
+  padding: 1.25rem 2rem;
+  font-size: 24px;
+}
+.container input::placeholder {
+  color: hsl(183deg, 100%, 15%);
+  font-weight: 700;
+  font-size: 24px;
+  text-align: right;
+}
+.container input:focus {
+  outline: 3px solid hsl(172deg, 67%, 45%);
+}
+.container .bill {
+  position: relative;
+  margin-bottom: 3rem;
+}
+.container .bill .dollar {
+  position: absolute;
+  bottom: 19px;
+  left: 19px;
+}
+.container .tip-percentage-container {
+  margin-bottom: 3rem;
+}
+.container .tip-percentage-container label {
+  margin-bottom: 1rem;
+}
+.container .tip-percentage-container .grid-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 2rem;
+}
+.container .tip-percentage-container .grid-container .btn {
+  padding: 1rem 0;
+  font-size: 24px;
+  border-radius: 0.8rem;
+  border: none;
+  cursor: pointer;
+}
+.container .tip-percentage-container .grid-container .btn:hover {
+  background-color: hsl(172deg, 67%, 45%);
+  color: hsl(183deg, 100%, 15%);
+  transition: all 0.3s ease;
+}
+.container .tip-percentage-container .grid-container .green {
+  background-color: hsl(183deg, 100%, 15%);
+  color: hsl(189deg, 41%, 97%);
+}
+.container .tip-percentage-container .grid-container .custom::placeholder {
+  color: hsl(184deg, 14%, 56%) !important;
+  font-weight: 300;
+  letter-spacing: 1.5px;
+}
+.container .people-container {
+  position: relative;
+  margin-bottom: 3rem;
+}
+.container .people-container .person {
+  position: absolute;
+  bottom: 19px;
+  left: 19px;
+}
+.container .tip-summary-container {
+  width: 100%;
+  background-color: hsl(183deg, 100%, 15%);
+  padding: 2rem;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem 0;
+}
+.container .tip-summary-container .row {
+  display: flex;
+  justify-content: space-between;
+}
+.container .tip-summary-container .row .row-container {
+  display: flex;
+  flex-direction: column;
+}
+.container .tip-summary-container .row .row-container .amount {
+  font-size: 18px;
+  color: hsl(189deg, 41%, 97%);
+}
+.container .tip-summary-container .row .row-container .amount-person {
+  font-size: 14px;
+  color: hsl(184deg, 14%, 56%);
+}
+.container .tip-summary-container .row .cost {
+  font-size: 24px;
+  color: hsl(172deg, 67%, 45%);
+}
+.container .tip-summary-container .reset {
+  width: 100%;
+  border: none;
+  border-radius: 6px;
+  padding: 1.5rem;
+  font-size: 18px;
+  font-weight: 700;
+  text-transform: uppercase;
+  background-color: hsl(172deg, 67%, 45%);
+  color: hsl(183deg, 100%, 15%);
+}
+.container .tip-summary-container .reset:hover {
+  background-color: hsl(172deg, 73%, 76%);
+}
+
 .attribution {
   font-size: 11px;
   text-align: center;
@@ -19,6 +150,43 @@ html {
 
 body {
   font-family: "Space Mono", monospace;
+  min-height: 100vh;
+}
+
+@media screen and (min-width: 756px) {
+  body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: hsl(185deg, 41%, 84%);
+  }
+  .container {
+    display: flex;
+    width: 75%;
+    background-color: #fff;
+    border-radius: 12px;
+    gap: 3rem;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    margin-bottom: 2rem;
+  }
+  .container .left {
+    width: 50%;
+  }
+  .container .right {
+    width: 50%;
+  }
+  .container .right .tip-summary-container {
+    height: 100%;
+    padding: 3rem;
+  }
+  .container .right .tip-summary-container .row .cost {
+    font-size: 40px;
+  }
+  .container .right .tip-summary-container .reset {
+    margin-top: auto;
+    transition: all 0.3s ease;
+  }
 }
 
 /*# sourceMappingURL=output.css.map */

@@ -1,0 +1,46 @@
+@import './variables';
+
+@media screen and (min-width: 756px) {
+	body {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		background-color: $light-grayish-cyan;
+	}
+	.container {
+		display: flex;
+		width: 75%;
+		background-color: #fff;
+		border-radius: 12px;
+		gap: 3rem;
+		box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+		margin-bottom: 2rem;
+
+		.left {
+			width: 50%;
+		}
+
+		.right {
+			width: 50%;
+
+			.tip-summary-container {
+				height: 100%;
+				padding: 3rem;
+
+				.row {
+					.cost {
+						font-size: 40px;
+					}
+				}
+
+				.reset {
+					margin-top: auto;
+          transition: all .3s ease;
+				}
+
+        
+			}
+		}
+	}
+}
