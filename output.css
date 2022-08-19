@@ -24,6 +24,9 @@
   width: 100%;
   padding: 1.25rem 2rem;
   font-size: 24px;
+  color: hsl(183deg, 100%, 15%);
+  font-weight: 700;
+  font-size: 24px;
 }
 .container input::placeholder {
   color: hsl(183deg, 100%, 15%);
