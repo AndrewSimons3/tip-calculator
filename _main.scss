@@ -27,21 +27,21 @@
 		width: 100%;
 		padding: 1.25rem 2rem;
 		font-size: 24px;
-    color: $very-dark-cyan;
-		font-weight: 700;
-		font-size: 24px;
-    
-	}
-
-	input::placeholder {
 		color: $very-dark-cyan;
 		font-weight: 700;
 		font-size: 24px;
+		font-family: 'Space Mono', monospace;
+	}
+
+	input::placeholder {
+		color: #9ebbbd;
+		font-weight: 700;
+		font-size: 24px;
 		text-align: right;
+		font-family: 'Space Mono', monospace;
 	}
 
 	input:focus {
-		
 		outline: 3px solid $strong-cyan;
 	}
 
@@ -53,6 +53,19 @@
 			position: absolute;
 			bottom: 19px;
 			left: 19px;
+		}
+
+		.bill-error {
+			color: $error;
+			position: absolute;
+			right: 10px;
+			top: 6px;
+			font-size: 1.2rem;
+			display: none;
+		}
+
+		.error-border {
+			outline: 3px solid $error;
 		}
 	}
 
@@ -73,6 +86,7 @@
 				border-radius: 0.8rem;
 				border: none;
 				cursor: pointer;
+				font-family: 'Space Mono', monospace;
 			}
 
 			.btn:hover {
@@ -86,10 +100,14 @@
 				color: $very-light-grayish-cyan;
 			}
 
+			.active {
+				background-color: $strong-cyan;
+			}
+
 			.custom::placeholder {
-				color:$grayish-cyan !important;
-        font-weight: 300;
-        letter-spacing: 1.5px;
+				color: $grayish-cyan !important;
+				font-weight: 300;
+				letter-spacing: 1.5px;
 			}
 		}
 	}
@@ -97,11 +115,25 @@
 	.people-container {
 		position: relative;
 		margin-bottom: 3rem;
+		position: relative;
 
 		.person {
 			position: absolute;
 			bottom: 19px;
 			left: 19px;
+		}
+
+		.people-error {
+			color: $error;
+			position: absolute;
+			right: 10px;
+			top: 6px;
+			font-size: 1.2rem;
+			display: none;
+		}
+
+		.error-border {
+			outline: 3px solid $error;
 		}
 	}
 
