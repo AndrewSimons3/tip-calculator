@@ -29,9 +29,15 @@
 			<div class="left">
 				<div class="bill">
 					<label>Bill</label>
-          <p class="bill-error">Can't be zero</p>
+					<p class="bill-error">Can't be zero</p>
 					<img class="dollar" src="./images/icon-dollar.svg" alt="dollar" />
-					<input id="bill-amount" type="text" placeholder="0" dir="rtl" />
+					<input
+						id="bill-amount"
+						type="text"
+						placeholder="0"
+						dir="rtl"
+						oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
+					/>
 				</div>
 				<div class="tip-percentage-container">
 					<label>Select Tip %</label>
@@ -41,14 +47,27 @@
 						<button class="btn green">15%</button>
 						<button class="btn green">25%</button>
 						<button class="btn green">50%</button>
-						<input class="custom" id="custom" type="text" placeholder="Custom" dir="rtl" />
+						<input
+							class="custom"
+							id="custom"
+							type="text"
+							placeholder="Custom"
+							oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
+							dir="rtl"
+						/>
 					</div>
 				</div>
 				<div class="people-container">
 					<label>Number of People</label>
-          <p class="people-error">Can't be zero</p>
+					<p class="people-error">Can't be zero</p>
 					<img class="person" src="./images/icon-person.svg" alt="person" />
-					<input type="text" id="people-amount" placeholder="0" dir="rtl" />
+					<input
+						type="text"
+						id="people-amount"
+						placeholder="0"
+						dir="rtl"
+						oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
+					/>
 				</div>
 			</div>
 			<div class="right">

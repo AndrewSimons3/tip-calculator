@@ -12,12 +12,13 @@ const tipAmountValue = document.querySelector('.tip-amount-value');
 const tipBtns = document.querySelectorAll('.btn');
 tipBtns.forEach((btn) => btn.addEventListener('click', calculateTipAndTotal));
 
+//calculate the custom tip when entered into the custom input field
 const custom = document.getElementById('custom');
 custom.addEventListener('input', getCustomTipPercentage);
 custom.addEventListener('input', calculateCustomTipAndTotal);
 
 // returns the current value in the bill input field
-const billAmount = document.getElementById('bill-amount');
+const billAmount = document.getElementById('bill-amount')
 billAmount.addEventListener('input', () => {
 	return billAmount.value;
 });
@@ -28,19 +29,23 @@ peopleAmount.addEventListener('input', () => {
 	return peopleAmount.value;
 });
 
-// remove error state on number of people input when clicked on
+// remove error state on number of people input when typing
 peopleAmount.addEventListener('keyup', () => {
 	peopleError.style.display = 'none';
 	peopleAmount.classList.remove('error-border');
 });
+//reset form state when updating/changing the people amount
+peopleAmount.addEventListener('input', resetForm);
 
 // remove error state on bill input when clicked on
 billAmount.addEventListener('keyup', () => {
 	billError.style.display = 'none';
 	billAmount.classList.remove('error-border');
 });
+// reset form state when updating/changing bill amount
+billAmount.addEventListener('input', resetForm);
 
-//reset values
+//reset values when clicking reset button
 const reset = document.getElementById('reset');
 reset.addEventListener('click', () => {
 	tipAmountValue.innerHTML = '$0.00';
@@ -51,9 +56,17 @@ reset.addEventListener('click', () => {
 	tipBtns.forEach((btn) => btn.classList.remove('active'));
 });
 
+function resetForm() {
+	tipAmountValue.innerHTML = '$0.00';
+	totalAmountValue.innerHTML = '$0.00';
+	custom.value = '';
+	tipBtns.forEach((btn) => btn.classList.remove('active'));
+}
+
 function getTipPercentage(event) {
 	tipBtns.forEach((btn) => btn.classList.remove('active'));
 	event.target.classList.add('active');
+
 
 	let tipPercentage = event.target.innerText;
 	const formattedTipPercentage = tipPercentage.replace(/[^\w\s]/gi, '') * 0.01;
@@ -61,8 +74,10 @@ function getTipPercentage(event) {
 }
 
 function getCustomTipPercentage(event) {
-	tipBtns.forEach((btn) => btn.classList.remove('active'));
-	customTipPercentage = event.target.value;
+  tipBtns.forEach((btn) => btn.classList.remove('active'));
+  customTipPercentage = event.target.value;
+
+  
 	const formattedCustomTipPercentage =
 		customTipPercentage.replace(/[^\w\s]/gi, '') * 0.01;
 	return formattedCustomTipPercentage;
@@ -91,10 +106,10 @@ function calculateTipAndTotal() {
 }
 
 function calculateCustomTipAndTotal() {
-  if (+!billAmount.value || +!peopleAmount.value) {
-    // error shown on bill and number of people 
-    return;
-  }
+	if (+!billAmount.value || +!peopleAmount.value) {
+		// error shown on bill and number of people
+		return;
+	}
 	//calculate custom tip and total
 	if (!+customTipPercentage || +customTipPercentage === 0) {
 		custom.classList.add('error-border');
